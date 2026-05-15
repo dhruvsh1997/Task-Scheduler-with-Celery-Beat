@@ -162,7 +162,8 @@ API is now at: http://localhost:8000/api/
 ### Terminal 2 — Celery worker
 ```bash
 source venv/bin/activate
-celery -A APITaskWorkerProj worker --loglevel=info
+celery -A APITaskWorkerProj worker --loglevel=info #or if asgi not setup
+celery -A APITaskWorkerProj worker --pool=solo --loglevel=info
 ```
 
 ### Terminal 3 — Celery Beat (scheduler)
